@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GA 練習網站 | GA Practice Site</title>
+
+<!-- ====== GA4 TAG GOES HERE (Step B3). Leave empty for now. ====== -->
+<!-- ====== GA4 代碼之後貼在這裡（步驟 B3），現在先留空 ====== -->
+
+<style>
+  :root { --bg:#f7f8fa; --ink:#1d2433; --muted:#5b6475; --accent:#1a6b5a; --line:#d9dde5; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#14181f; --ink:#e8ebf0; --muted:#9aa3b2; --accent:#4fc3a1; --line:#2a313c; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, "Noto Sans TC", sans-serif; background:var(--bg); color:var(--ink); line-height:1.7; }
+  header, main { max-width:720px; margin:0 auto; padding:24px 20px; }
+  nav a { margin-right:16px; color:var(--accent); }
+  h1 { font-size:28px; margin:24px 0 8px; }
+  p { color:var(--muted); }
+  .item { border:1px solid var(--line); border-radius:8px; padding:16px; margin:12px 0; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+  button { background:var(--accent); color:#fff; border:0; border-radius:8px; padding:10px 16px; font-size:16px; cursor:pointer; }
+  @media (prefers-color-scheme: dark) { button { color:#0b1a15; } }
+  #msg { margin-top:16px; color:var(--accent); min-height:1.7em; }
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html">首頁 Home</a>
+    <a href="about.html">關於 About</a>
+  </nav>
+</header>
+<main>
+  <h1>小型練習商店 Practice Shop</h1>
+  <p>這是專門用來練習 Google Analytics 的測試網站。 This site exists only to practice Google Analytics.</p>
+
+  <div class="item"><span>手沖咖啡豆 Coffee beans — $15</span><button onclick="buy('coffee')">加入購物車 Add to cart</button></div>
+  <div class="item"><span>陶瓷杯 Ceramic mug — $9</span><button onclick="buy('mug')">加入購物車 Add to cart</button></div>
+  <div id="msg" role="status"></div>
+</main>
+<script>
+  function buy(name) {
+    document.getElementById('msg').textContent = '已加入 Added: ' + name;
+  }
+</script>
+</body>
+</html>
