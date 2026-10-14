@@ -50,6 +50,9 @@
 <script>
   function buy(name) {
     document.getElementById('msg').textContent = '已加入 Added: ' + name;
+    gtag('event', 'add_to_cart', {
+      items: [{ item_name: name }]
+    });
   }
 </script>
 </body>
